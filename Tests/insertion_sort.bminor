@@ -1,0 +1,28 @@
+
+Insertion_sort: function void(a:array[] integer, size:integer) =
+{
+    key:integer;
+    i:integer;
+    j:integer;
+    for(i = 1; i < size; i++)
+    {
+        key = a[i];
+        j = i - 1;
+        for(; j >= 0 && a[j] > key; j--)
+            a[j+1] = a[j];
+        a[j+1] = key;
+    }
+}
+
+
+
+main: function void() = {
+    arr: array[10] integer = {2,8,1,7,6,9,4,3,5,0};
+    
+    Insertion_sort(arr,10);
+    print "Array after insertion sort:\n";
+    i:integer;
+    for(i = 0; i < 10; i++)
+        print arr[i], ' ';
+    print '\n';
+}

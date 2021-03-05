@@ -1,0 +1,27 @@
+
+Bubble_sort: function void(a:array [] integer, size:integer) = 
+{
+    i:integer;
+    j:integer;
+    temp:integer;
+    for(i = 0; i < size - 1; i++)
+        for(j = size - 1; j > i; j--)
+            if(a[j] < a[j - 1])
+            {
+                temp = a[j - 1];
+                a[j - 1] = a[j];
+                a[j] = temp;
+            }
+}
+
+
+main: function void() = {
+    arr: array[10] integer = {2,8,1,7,6,9,4,3,5,0};
+    
+    Bubble_sort(arr,10);
+    print "Array after bubble sort:\n";
+    i:integer;
+    for(i = 0; i < 10; i++)
+        print arr[i], ' ';
+    print '\n';
+}

@@ -1,0 +1,29 @@
+
+Selection_sort: function void(a:array [] integer, size: integer) =
+{
+    temp:integer;
+    smallest:integer;
+    i:integer;
+    j:integer;
+    for(i = 0; i < size - 1; i++)
+    {
+        smallest = i;
+        for(j = i+1; j < size; j++)
+            if(a[j] < a[smallest]) smallest = j;
+        temp = a[i];
+        a[i] = a[smallest];
+        a[smallest] = temp;
+    }
+
+}
+
+main: function void() = {
+    arr: array[10] integer = {2,8,1,7,6,9,4,3,5,0};
+    
+    Selection_sort(arr,10);
+    print "Array after selection sort:\n";
+    i:integer;
+    for(i = 0; i < 10; i++)
+        print arr[i], ' ';
+    print '\n';
+}

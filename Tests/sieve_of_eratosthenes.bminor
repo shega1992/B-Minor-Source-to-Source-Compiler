@@ -1,0 +1,33 @@
+
+
+Fill_array:function void(arr:array [] integer, size:integer);
+Sieve_of_eratosthenes: function void (arr:array [] integer, size:integer);
+
+
+main: function void() = {
+    arr: array[100] integer;
+    
+    Fill_array(arr,100);
+    Sieve_of_eratosthenes(arr, 100);
+}
+
+Fill_array:function void(arr:array [] integer, size:integer) =
+{
+    i:integer;
+    for(i = 0; i < size; i++)
+        arr[i] = i;
+}
+
+Sieve_of_eratosthenes: function void (arr:array [] integer, size:integer) =
+{
+    p:integer;
+    j:integer;
+    for(p = 2; p < size; p++)
+        if(arr[p] != 0)
+        {
+            print arr[p], ' ';
+            for(j = p * p; j < size; j = j + p)
+                arr[j] = 0;
+        }
+    print '\n';
+}
