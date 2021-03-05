@@ -15,3 +15,5 @@ To resolve declaration: bminor -resolve source.bminor
 To typecheck: bminor -typecheck source.bminor
 
 To generate CPP file: bminor -cpp source.bminor
+
+tests folder contains test programs for B-Minor compiler.
